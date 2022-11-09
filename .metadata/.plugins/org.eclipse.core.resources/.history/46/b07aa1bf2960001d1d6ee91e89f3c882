@@ -157,6 +157,13 @@ public class JavaGameClientView extends JFrame {
 		contentPane.add(btnDrawing);
 
 		try {
+			
+			udpSocket = new DatagramSocket(port);
+			byte[] buffer = new byte[1024];
+			DatagramPacket recvPacket = new DatagramPacket(buffer, buffer.length);
+			udpSocket.receive(recvPacket);
+			
+			ObjectOutputStream oos1 = new ObjectOutputStream(socket.getOutputStream());
 			socket = new Socket(ip_addr, Integer.parseInt(port_no));
 			oos = new ObjectOutputStream(socket.getOutputStream());
 			oos.flush();

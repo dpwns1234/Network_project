@@ -103,13 +103,13 @@ public class JavaGameClientViewDrawing extends JFrame {
 		});
 		contentPane.add(colorRedButton);
 		
-//		lblMouseEvent = new JLabel("<dynamic>");
-//		lblMouseEvent.setHorizontalAlignment(SwingConstants.CENTER);
-//		lblMouseEvent.setFont(new Font("굴림", Font.BOLD, 14));
-//		lblMouseEvent.setBorder(new LineBorder(new Color(0, 0, 0)));
-//		lblMouseEvent.setBackground(Color.WHITE);
-//		lblMouseEvent.setBounds(11, 539, 400, 40);
-//		contentPane.add(lblMouseEvent);
+		lblMouseEvent = new JLabel("<dynamic>");
+		lblMouseEvent.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMouseEvent.setFont(new Font("굴림", Font.BOLD, 14));
+		lblMouseEvent.setBorder(new LineBorder(new Color(0, 0, 0)));
+		lblMouseEvent.setBackground(Color.WHITE);
+		lblMouseEvent.setBounds(11, 539, 400, 40);
+		contentPane.add(lblMouseEvent);
 		MyMouseEvent mouse = new MyMouseEvent();
 		panel.addMouseMotionListener(mouse);
 		panel.addMouseListener(mouse);

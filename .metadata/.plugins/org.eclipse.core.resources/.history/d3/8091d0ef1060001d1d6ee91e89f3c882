@@ -20,8 +20,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
 import java.net.Socket;
 
 import javax.swing.JFrame;
@@ -77,10 +75,6 @@ public class JavaGameClientView extends JFrame {
 	private Graphics gc2 = null;
 	public JavaGameClientViewDrawing drawing;
 	public JavaGameClientView view;
-	
-	
-	private DatagramSocket udpSocket;
-	private int port = 30000;
 
 	
 	/**
