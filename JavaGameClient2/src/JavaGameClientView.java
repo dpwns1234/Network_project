@@ -77,6 +77,7 @@ public class JavaGameClientView extends JFrame {
 	private Graphics gc2 = null;
 	public JavaGameClientViewDrawing drawing;
 	public JavaGameClientView view;
+	public JavaDrawingUdpServer udpServer;
 	
 	
 	private DatagramSocket udpSocket;
@@ -146,11 +147,15 @@ public class JavaGameClientView extends JFrame {
 		contentPane.add(btnExit);
 
 		view = this;
+
+		udpServer = new JavaDrawingUdpServer()
+		udpServer.serverStart();
 		
 		btnDrawing = new JButton("Drawing");
 		btnDrawing.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				drawing = new JavaGameClientViewDrawing(username, view);
+				drawing.sendMessage("connect," + username);
 			}
 		});
 		btnDrawing.setBounds(99, 539, 148, 40);
@@ -190,7 +195,6 @@ public class JavaGameClientView extends JFrame {
 		public void run() {
 			while (true) {
 				try {
-
 					Object obcm = null;
 					String msg = null;
 					ChatMsg cm;
@@ -225,6 +229,9 @@ public class JavaGameClientView extends JFrame {
 					case "500": // Mouse Event 수신
 						drawing.DoMouseEvent(cm);
 						break;
+					default:
+						String colorCode = cm.code.substring(3);
+						drawing.receiveChangeColor(colorCode);
 					}
 				} catch (IOException e) {
 					AppendText("ois.readObject() error");

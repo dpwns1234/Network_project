@@ -159,6 +159,9 @@ public class JavaGameServer extends JFrame {
 		private Vector user_vc;
 		public String UserName = "";
 		public String UserStatus;
+		
+		
+		private String roomId; // lobby로 초기화, 방에 들어가면 room id로 대입
 
 		public UserService(Socket client_socket) {
 			// TODO Auto-generated constructor stub

@@ -9,4 +9,10 @@
     <fullyQualifiedTypeName name="javax.swing.text.SimpleAttributeSet"/>
     <fullyQualifiedTypeName name="javax.swing.text.StyleConstants"/>
     <fullyQualifiedTypeName name="javax.swing.border.LineBorder"/>
+    <fullyQualifiedTypeName name="java.awt.Graphics2D"/>
+    <fullyQualifiedTypeName name="java.awt.BasicStroke"/>
+    <fullyQualifiedTypeName name="java.awt.Point"/>
+    <fullyQualifiedTypeName name="java.net.DatagramSocket"/>
+    <fullyQualifiedTypeName name="java.net.DatagramPacket"/>
+    <fullyQualifiedTypeName name="javax.swing.JButton"/>
 </qualifiedTypeNameHistroy>
